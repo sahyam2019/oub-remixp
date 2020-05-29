@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
-# Project OpenUserBot Remix
+# Project OpenUserBot Remix(DON'T DEPLOY THIS ONE)
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
 
@@ -21,7 +21,9 @@
 /**
 ```
 
+## ONLY FOR TESTING
 ## Groups and support
+
 
 if you want new features, or announcements, you can follow our [OpenUserBot Channel](https://t.me/PaperplaneExtended_news).
 
