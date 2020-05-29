@@ -3,7 +3,7 @@ API_KEY =
 API_HASH = 
 
 
-# Userbot Session String this var is important
+# Userbot Session String this var is important 
 STRING_SESSION = 
 
 # Logging channel/group ID configuration. this var is important
