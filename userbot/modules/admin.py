@@ -16,7 +16,7 @@ import html
 import logging
 import userbot.modules.sql_helper.warns_sql as sql
 from telethon import events, utils
-from userbot.utils import is_admin
+from userbot.utils.tools import is_admin
 
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
@@ -1120,7 +1120,10 @@ async def _(event):
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def on_new_message(event):
-    # TODO: exempt admins from locks
+    if await is_admin(even.chat_id, event.from_id):
+        return
+    if bot.me.id == event.from_id:
+        return
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
     for snip in snips:
@@ -1135,6 +1138,8 @@ async def on_new_message(event):
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
             break
         pass
+
+
 
 
 @register(outgoing=True, pattern="^.addbl(?: |$)(.*)")
