@@ -74,7 +74,7 @@ def human_to_bytes(size: str) -> int:
     return int(float(number)*units[unit])
 
 async def is_admin(chat_id, user_id):
-    req_jo = await borg(GetParticipantRequest(
+    req_jo = await bot(GetParticipantRequest(
         channel=chat_id,
         user_id=user_id
     ))

@@ -16,6 +16,7 @@ import html
 import logging
 import userbot.modules.sql_helper.warns_sql as sql
 from telethon import events, utils
+from userbot.utils import is_admin
 
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
@@ -1068,15 +1069,18 @@ async def _(event):
         return
     warn_reason = event.pattern_match.group(1)
     reply_message = await event.get_reply_message()
+    if await is_admin(event.chat_id, reply_message.from_id):
+        return
     limit, soft_warn = sql.get_warn_setting(event.chat_id)
     num_warns, reasons = sql.warn_user(reply_message.from_id, event.chat_id, warn_reason)
     if num_warns >= limit:
         sql.reset_warns(reply_message.from_id, event.chat_id)
         if soft_warn:
-            logging.info("TODO: kick user")
+            await bot(EditBannedRequest(event.chat_id, reply_message.from_id, banned_rights))
             reply = "{} warnings, <u><a href='tg://user?id={}'>user</a></u> has been kicked!".format(limit, reply_message.from_id)
+            await bot(EditBannedRequest(event.chat_id, reply_message.from_id, unbanned_rights))
         else:
-            logging.info("TODO: ban user")
+            await bot(EditBannedRequest(event.chat_id, reply_message.from_id, banned_rights))
             reply = "{} warnings, <u><a href='tg://user?id={}'>user</a></u> has been banned!".format(limit, reply_message.from_id)
     else:
         reply = "<u><a href='tg://user?id={}'>user</a></u> has {}/{} warnings... watch out!".format(reply_message.from_id, num_warns, limit)
@@ -1084,7 +1088,6 @@ async def _(event):
             reply += "\nReason for last warn:\n{}".format(html.escape(warn_reason))
     #
     await event.edit(reply, parse_mode="html")
-
 
 @register(outgoing=True, pattern="^.getwarns(?: |$)(.*)")
 async def _(event):
@@ -1117,6 +1120,8 @@ async def _(event):
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def on_new_message(event):
+        if await is_admin(even.chat_id, event.from_id):
+            return
     # TODO: exempt admins from locks
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
