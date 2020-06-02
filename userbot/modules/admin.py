@@ -1078,7 +1078,7 @@ async def _(event):
         return
     
     if await is_admin(event.chat_id, reply_message.from_id):
-        return
+        return await event.edit("`User is an admin`")
 
     limit, soft_warn = sql.get_warn_setting(event.chat_id)
     num_warns, reasons = sql.warn_user(reply_message.from_id, event.chat_id, warn_reason)
@@ -1148,7 +1148,7 @@ async def set_warn_strength(event):
             await event.edit("I Am **Baning** User's For Now.")
     return ""
 
-@register(outgoing=True, pattern="^.setwarnlimit(?: |$)(.*)")
+@register(outgoing=True, pattern="^.setwarn(?: |$)(.*)")
 async def set_warn_limit(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -1291,5 +1291,11 @@ CMD_HELP.update({
 \n\n`.addbl <keyword>`\
 \nUsage: Saves the message to the 'blacklist keyword.\n\nThe bot will delete to the message whenever 'blacklist keyword' is mentioned.\
 \n\n`.rmbl <keyword>`\
-\nUsage: Stops the specified blacklist."                
+\nUsage: Stops the specified blacklist.\
+\n\n`.setflood` value.\
+\nUsage:Set flood limit in the current chat.\
+\n\n`.strongwarn` <yes/on or no/off>.\
+\nUsage:set group's warn mode i.e <strong warn:bans user, soft warn: kicks user.\
+\n\n`.setwarn` value.\
+\nUsage:sets warn limit."
 })
