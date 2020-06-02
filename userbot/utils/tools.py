@@ -10,6 +10,7 @@ import asyncio
 import datetime
 import logging
 import os
+import math
 import os.path
 import sys
 import time
@@ -19,6 +20,10 @@ from typing import Tuple, Union
 from telethon import errors
 from telethon.tl import types
 from telethon.utils import get_display_name
+from telethon import events
+from telethon.tl.functions.messages import GetPeerDialogsRequest
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 
 async def md5(fname: str) -> str:
@@ -67,3 +72,14 @@ def human_to_bytes(size: str) -> int:
         size = re.sub(r'([KMGT])', r' \1', size)
     number, unit = [string.strip() for string in size.split()]
     return int(float(number)*units[unit])
+
+async def is_admin(chat_id, user_id):
+    req_jo = await borg(GetParticipantRequest(
+        channel=chat_id,
+        user_id=user_id
+    ))
+    chat_participant = req_jo.participant
+    if isinstance(chat_participant, ChannelParticipantCreator) or isinstance(chat_participant, ChannelParticipantAdmin):
+        return True
+    return False
+
