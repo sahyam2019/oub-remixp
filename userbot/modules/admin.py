@@ -1088,7 +1088,7 @@ async def _(event):
             reply = "{} warnings, <u><a href='tg://user?id={}'>user</a></u> has been kicked!".format(limit, reply_message.from_id)
             await event.client.kick_participant(event.chat_id, reply_message.from_id)
         else:
-            await event.client.edit_permissions(chat, user.id, until_date=None, view_messages=False)
+            await event.client.edit_permissions(chat, reply_message.from_id, until_date=None, view_messages=False)
             reply = "{} warnings, <u><a href='tg://user?id={}'>user</a></u> has been banned!".format(limit, reply_message.from_id)
     else:
         reply = "<u><a href='tg://user?id={}'>user</a></u> has {}/{} warnings... watch out!".format(reply_message.from_id, num_warns, limit)
