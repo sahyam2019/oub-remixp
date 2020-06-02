@@ -48,9 +48,7 @@ async def _(event):
         )
         await asyncio.sleep(10)
         await no_admin_privilege_message.edit(
-            "https://t.me/keralagram/724970",
-            link_preview=False
-        )
+            "Sadly u don't have admin privilage")
     else:
         await event.client.send_message(
             entity=event.chat_id,
