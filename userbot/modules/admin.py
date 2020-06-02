@@ -1120,8 +1120,6 @@ async def _(event):
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def on_new_message(event):
-        if await is_admin(even.chat_id, event.from_id):
-            return
     # TODO: exempt admins from locks
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
