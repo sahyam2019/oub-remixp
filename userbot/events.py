@@ -26,7 +26,7 @@ def register(**args):
     unsafe_pattern = r'^[^/!#@\$A-Za-z]'
     groups_only = args.get('groups_only', False)
     trigger_on_fwd = args.get('trigger_on_fwd', False)
-    disable_errors = args.get('disable_errors', False)
+    disable_errors = args.get('disable_errors', True)
     insecure = args.get('insecure', False)
 
     if pattern is not None and not pattern.startswith('(?i)'):
