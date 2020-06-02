@@ -17,7 +17,6 @@ import time
 from typing import Tuple, Union
 from userbot import bot
 
-
 from telethon import errors
 from telethon.tl import types
 from telethon.utils import get_display_name
@@ -74,8 +73,8 @@ def human_to_bytes(size: str) -> int:
     number, unit = [string.strip() for string in size.split()]
     return int(float(number)*units[unit])
 
-async def is_admin(client, chat_id, user_id):
-    req_jo = await client(GetParticipantRequest(
+async def is_admin(chat_id, user_id):
+    req_jo = await bot(GetParticipantRequest(
         channel=chat_id,
         user_id=user_id
     ))
