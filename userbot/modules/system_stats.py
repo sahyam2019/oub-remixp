@@ -18,6 +18,7 @@ from userbot.events import register
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
+work= "[🤖 STATUS: Working Sexy AF ✅](https://telegra.ph/file/b0d020f8bdc1af3fc08aa.jpg)"
 
 @register(outgoing=True, pattern="^.sysd$")
 async def sysdetails(sysd):
@@ -132,7 +133,7 @@ async def amireallyalive(alive):
     await alive.edit(
                      
                       
-                     "[🤖 STATUS: Working Sexy AF ✅](https://telegra.ph/file/b0d020f8bdc1af3fc08aa.jpg, link_preview=True) \n"
+                     f"{work} \n"
                      f"Telethon version:{version.__version__} \n"
                      f"Python version🐍:{python_version()} \n"
                      f"`Bot Version🤘: Remix 2.5` \n"
