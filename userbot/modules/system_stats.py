@@ -133,7 +133,6 @@ async def amireallyalive(alive):
                      
                       
                      "[🤖 STATUS: Working Sexy AF ✅](https://telegra.ph/file/b0d020f8bdc1af3fc08aa.jpg, link_preview=True) \n"
-                     "\n"
                      f"Telethon version:{version.__version__} \n"
                      f"Python version🐍:{python_version()} \n"
                      f"`Bot Version🤘: Remix 2.5` \n"
