@@ -133,7 +133,7 @@ async def amireallyalive(alive):
     await alive.edit(
                      
                       
-                     f"(`🤖 STATUS: Working Sexy AF ✅`, {link_preview=True})\n"
+                     f"[`🤖 STATUS: Working Sexy AF ✅`], ({link_preview=True})\n"
 
                      f"Telethon version:{version.__version__} \n"
                      f"Python version🐍:{python_version()} \n"
