@@ -21,12 +21,12 @@ from userbot import bot, BOTLOG_CHATID, LOGSPAMMER
 def register(**args):
     """ Register a new event. """
     pattern = args.get('pattern', None)
-    disable_edited = args.get('disable_edited', False)
+    disable_edited = args.get('disable_edited', True)
     ignore_unsafe = args.get('ignore_unsafe', False)
     unsafe_pattern = r'^[^/!#@\$A-Za-z]'
     groups_only = args.get('groups_only', False)
     trigger_on_fwd = args.get('trigger_on_fwd', False)
-    disable_errors = args.get('disable_errors', True)
+    disable_errors = args.get('disable_errors', False)
     insecure = args.get('insecure', False)
 
     if pattern is not None and not pattern.startswith('(?i)'):
