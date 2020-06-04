@@ -14,6 +14,7 @@ import re
 import subprocess
 import time
 from datetime import datetime
+from userbot.events import register
 
 
 langi = "en"
