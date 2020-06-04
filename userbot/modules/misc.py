@@ -77,7 +77,8 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
-    await client.send_file(chat, '/userbot/windows.mp3', voice_note=True)
+    chat = await event.get_chat()
+    await event.client.send_file(chat, '/userbot/windows.mp3', voice_note=True)
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n"
                                         "Bot Restarted")
