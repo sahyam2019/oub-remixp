@@ -14,7 +14,7 @@ from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
 
-from userbot import register
+from userbot.events import register
 import asyncio
 
 from time import sleep
