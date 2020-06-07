@@ -1,4 +1,10 @@
-#credits  @MarioDevs
+
+#credits?? I even don't know ... everyone changed owner section so if you need credits pm me.
+
+#And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
+
+#Usage .gamerpfp  Im Not Responsible For Any Ban caused By This
+
 import requests , re , random 
 
 import urllib , os 
@@ -8,35 +14,23 @@ from telethon.tl import functions
 from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
-from userbot.events import register
 
-
-
+from userbot import register
 import asyncio
 
 from time import sleep
 
 COLLECTION_STRING = [
 
-  "Gravity Falls HD Wallpaper",
+  "star-wars-wallpaper-1080p",
 
   "4k-sci-fi-wallpaper",
 
-  "Anime Cat Girl Wallpaper",
+  "star-wars-iphone-6-wallpaper",
 
-  "To the Moon Wallpaper",
+  "kylo-ren-wallpaper",
 
-  "Fantasy Forest Wallpaper"
-
-  "Japanese Scenery Wallpaper",
-
-  "Caribbean Wallpaper Widescreen",
-
-  "Hawaii HD Wallpaper 1920x1080",
-
-  "Star Wars Art Wallpaper",
-
-  "4K Anime Wallpapers"  
+  "darth-vader-wallpaper"
 
 ]
 
@@ -68,7 +62,7 @@ async def animepp():
 
 async def main(event):
 
-    await event.edit("**selecting random pp.......Check Your Dp After 20 Seconds") 
+    await event.edit("**Changing random profile pic. Check after 10 secs)
 
     while True:
 
