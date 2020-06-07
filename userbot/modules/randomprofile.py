@@ -62,7 +62,7 @@ async def animepp():
 
 async def main(event):
 
-    await event.edit("**Changing random profile pic. Check after 10 secs)
+    await event.edit("**Changing random profile pic. Check after 10 secs**")
 
     while True:
 
