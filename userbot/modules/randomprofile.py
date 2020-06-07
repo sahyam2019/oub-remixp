@@ -21,15 +21,15 @@ from time import sleep
 
 COLLECTION_STRING = [
 
-  "star-wars-wallpaper-1080p",
+  "Gravity Falls HD Wallpaper",
 
   "4k-sci-fi-wallpaper",
 
-  "star-wars-iphone-6-wallpaper",
+  "Anime Cat Girl Wallpaper",
 
-  "kylo-ren-wallpaper",
+  "To the Moon Wallpaper",
 
-  "darth-vader-wallpaper"
+  "Fantasy Forest Wallpaper"
 
 ]
 
