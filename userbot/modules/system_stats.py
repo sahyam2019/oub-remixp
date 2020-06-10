@@ -136,11 +136,11 @@ async def amireallyalive(alive):
                      f"{work} \n"
                      f"Telethon version:{version.__version__} \n"
                      f"Python version🐍:{python_version()} \n"
-                     f"`Bot Version🤘: Remix 2.6` \n"
+                     f"`Bot Version🤘: kanged bot 1.0` \n"
                      f"------------------------------------ \n"
                      
                      f"User 👨‍🚀: {DEFAULTUSER} \n"
-                     f"Maintainer 🏄‍♂️: @heyworld"
+                     f"Maintainer 🏄‍♂️: dead"
                      )
                          
 
