@@ -13,10 +13,10 @@ Click on API Development Tools
 Create a new application, by entering the required details
 
 if Telegram is blocked by your ISP, you can try the @useTGxBot""")
-API_ID = int(input("Enter API ID here: "))
+API_KEY = int(input("Enter API KEY here: "))
 API_HASH = input("Enter API HASH here: ")
 
-with TelegramClient(StringSession(), API_ID, API_HASH) as client:
+with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
     session_string = client.session.save()
     saved_messages_template = """@remix 
 <code>STRING_SESSION</code>: <code>{}</code>
