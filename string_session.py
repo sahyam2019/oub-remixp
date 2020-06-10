@@ -12,17 +12,13 @@ print("""Please go-to my.telegram.org
 Login using your Telegram account
 Click on API Development Tools
 Create a new application, by entering the required details
-
-After generating string session please check saved messages section for string session""")
+Check your TG saved messages section for session""")
 API_KEY = int(input("Enter API_KEY here: "))
 API_HASH = input("Enter API_HASH here: ")
 
-
 with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
-    print("Check saved messages section in your tg account")
     session_string = client.session.save()
     saved_messages_template = """@PPE_Support 
 <code>STRING_SESSION</code>: <code>{}</code>
-
 ⚠️ <i>It is forbidden to pass this value to third parties</i>""".format(session_string)
     client.send_message("me", saved_messages_template, parse_mode="html")
