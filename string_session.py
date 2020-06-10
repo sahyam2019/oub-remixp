@@ -13,11 +13,13 @@ Login using your Telegram account
 Click on API Development Tools
 Create a new application, by entering the required details
 
-If Telegram is blocked by your ISP, you can USE VPN and login""")
-API_KEY = int(input("Enter API KEY here: "))
-API_HASH = input("Enter API HASH here: ")
+After generating string session please check saved messages section for string session""")
+API_KEY = int(input("Enter API_KEY here: "))
+API_HASH = input("Enter API_HASH here: ")
+
 
 with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
+    print("Check saved messages section in your tg account")
     session_string = client.session.save()
     saved_messages_template = """@PPE_Support 
 <code>STRING_SESSION</code>: <code>{}</code>
