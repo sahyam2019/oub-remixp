@@ -149,7 +149,11 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
+# Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "oub-remix")
+
+#Bot version
+BOT_VER = os.environ.get("BOT_VER", "3.0")
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
