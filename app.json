@@ -132,6 +132,10 @@
       "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
       "required": false
     },
+    "DEEZER_ARL_TOKEN": {
+      "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
+      "required": false
+    }
     "ANTI_SPAMBOT": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
       "value": "False"
