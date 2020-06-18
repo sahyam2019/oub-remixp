@@ -155,6 +155,9 @@ TERM_ALIAS = os.environ.get("TERM_ALIAS", "oub-remix")
 #Bot version
 BOT_VER = os.environ.get("BOT_VER", "3.0")
 
+# Zipfile module
+ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
