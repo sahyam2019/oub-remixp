@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
-[![Last Commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix)
+[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix) ![Last commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix)
 # Project OpenUserBot Remix(DON'T DEPLOY THIS ONE)
 # UNSAFE AF
 
