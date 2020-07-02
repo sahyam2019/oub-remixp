@@ -8,12 +8,7 @@ Imdb Module
 
 import bs4
 import requests
-import asyncio
-import os
 import re
-import subprocess
-import time
-from datetime import datetime
 from userbot.events import register
 
 
