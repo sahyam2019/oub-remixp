@@ -4,6 +4,9 @@
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
 
+
+![sahyam Github Stats](https://github-readme-stats.vercel.app/api?username=sahyam2019&&show_icons=true&theme=radical)
+
 ```
 #include <std/disclaimer.h>
 /**
