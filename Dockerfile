@@ -1,5 +1,5 @@
 # We're using Alpine Edge
-FROM alpine:edge
+FROM ubuntu:latest
 
 #
 # We have to uncomment Community repo for some packages
@@ -9,7 +9,9 @@ RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/r
 #
 # Installing Packages
 #
-RUN apk add freetype-dev --no-cache=true --update \
+RUN apt-get update -qq && \
+    apt-get upgrade -y && \
+    apt-get install --no-install-recommends -y \
     coreutils \
     bash \
     build-base \
